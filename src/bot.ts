@@ -11,25 +11,6 @@ const bot = new Bot(process.env.TELEGRAM_TOKEN || "");
 // Handle the /yo command to greet the user
 bot.command("yo", (ctx) => ctx.reply(`Yo ${ctx.from?.username}`));
 
-bot.command("ok", async (ctx) =>{
-  
-    const meensdata = {
-                   meenschat: text,
-                   meenskey: 'meenscute'
-                };
-    let response = await axios.post('https://servertest.myglitch.repl.co', meensdata, {
-            headers: {
-                'Content-Type': 'application/json',
-                //'content-type': 'undefined',
-                'user-agent':'Mozilla/5.0 (Linux; Android 8.1.0; MI 8 Build/OPM1.171019.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.86 Mobile Safari/537.36',
-
-            }
-        });
-
-   return ctx.reply(JSON.stringify(response.data));
-
-});
-
 
 // Handle the /effect command to apply text effects using an inline keyboard
 type Effect = { code: TextEffectVariant; label: string };
